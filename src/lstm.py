@@ -2,9 +2,9 @@ import numpy as np
 import pandas as pd
 import jieba
 
-pos = pd.read_excel('pos.xls', header=None)
+pos = pd.read_excel('../data/pos.xls', header=None)
 pos['label'] = 1
-neg = pd.read_excel('neg.xls', header=None)
+neg = pd.read_excel('../data/neg.xls', header=None)
 neg['label'] = 0
 all_ = pos.append(neg, ignore_index=True)
 all_['words'] = all_[0].apply(lambda s: list(jieba.cut(s))) #调用结巴分词
